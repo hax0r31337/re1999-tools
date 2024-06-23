@@ -16,7 +16,7 @@ def decrypt(ab, key):
 if __name__ == "__main__":
     import sys
 
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 4:
         print("Usage: python asset-bundles.py <input-file> <key> <output-file>")
         print("Usage: python asset-bundles.py BATCH <input-dir> <output-dir>")
         sys.exit(1)

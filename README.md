@@ -15,6 +15,11 @@ The file is located in the apk with the path `/assets/bin/Data/Managed/Resources
 **Game Version**: v1.6.0  
 For decrypting encrypted Unity AssetBundles.
 
+## text-assets.py
+
+**Game Version**: v1.6.0  
+For decrypting encrypted json text assets such as `json_language_jp.json.dat`.
+
 ### lua-bundles/extract.py
 
 **Game Version**: v1.6.0  
