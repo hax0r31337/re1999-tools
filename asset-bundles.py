@@ -1,3 +1,8 @@
+# the bundle is a plain UnityFS file behind a junk prefix of 1..8 bytes,
+# whose length is derived from the same key the old XOR scheme used
+MAGIC = b"UnityFS\0"
+
+
 def get_key(str: str) -> chr:
     key = 0
     for i in range(len(str)):
@@ -10,7 +15,15 @@ def get_key(str: str) -> chr:
 
 
 def decrypt(ab, key):
-    return bytes([ab[i] ^ key for i in range(len(ab))])
+    skip = key % 8 + 1
+    bundle = ab[skip:]
+
+    if not bundle.startswith(MAGIC):
+        raise ValueError(
+            f"no UnityFS header after {skip} bytes, found it at {ab.find(MAGIC)}"
+        )
+
+    return bundle
 
 
 if __name__ == "__main__":

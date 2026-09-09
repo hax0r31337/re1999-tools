@@ -12,7 +12,7 @@ The file is located in the apk with the path `/assets/bin/Data/Managed/Resources
 
 ### asset-bundles.py
 
-**Game Version**: v1.6.0  
+**Game Version**: v3.9.0  
 For decrypting encrypted Unity AssetBundles.
 
 ## text-assets.py
